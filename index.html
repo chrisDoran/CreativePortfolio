@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="no-js"  lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="images/resume.png" type="image/x-icon">
+<title>Chris Doran</title>
+
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/bebusneuebold" type="text/css"/>
+<!-- Normalize -->
+
+<link rel="stylesheet" href="css/assets/normalize.css" type="text/css">
+
+<link href="css/ionicons.min.css" rel="stylesheet" type="text/css">
+
+<!-- Bootstrap -->
+
+<link href="css/assets/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+<!-- Font-awesome.min -->
+
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+<!-- Effet -->
+
+<link rel="stylesheet" href="css/gallery/foundation.min.css"  type="text/css">
+<link rel="stylesheet" type="text/css" href="css/gallery/set1.css" />
+
+<!-- Main Style -->
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+<link rel="stylesheet" href="css/main.css" type="text/css">
+
+<!-- Responsive Style -->
+
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+
+<script src="https://unpkg.com/ionicons@4.2.4/dist/ionicons.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+
+<!--[if lt IE 9]>
+
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+
+<script src="js/assets/modernizr-2.8.3.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">    
+    var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 6) || 1000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #2F3036}";
+        document.body.appendChild(css);
+    };
+
+    $(function() {
+      $('a[href*=#]').on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+      });
+    });
+    </script>
+
+
+</head>
+
+<body>
+
+<!-- header -->
+
+<!-- <header id="header" class="header">
+  <div class="container-fluid">
+    <hgroup> 
+      
+      <h1> <a href="index1.html" title="Picxa"><img src="images/logo.png" alt="Picxa" title="Picxa"/></a> </h1>
+      
+      
+      <nav>
+        <div class="menu-expanded">
+          <div class="nav-icon">
+            <div id="menu" class="menu"></div>
+            <p>menu</p>
+          </div>
+          <div class="cross"> <span class="linee linea1"></span> <span class="linee linea2"></span> <span class="linee linea3"></span> </div>
+          <div class="main-menu">
+            <ul>
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="blog.html">blog</a></li>
+              <li><a href="contact.html">contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </hgroup>
+  </div>
+</header> -->
+
+<!-- header -->
+
+<main class="main-wrapper" id="container"> 
+  
+  <!-- image Gallery -->
+
+  <div id="pop" style="background-image: url(images/paper.png);">
+    <div id="intro" class="container-fluid">
+        <h1 class="text-center text-capitalize">CHRIS DORAN </h1>
+        <h4 class="text-center text-capitalize">
+            <a href="" class="typewrite" data-period="2000" data-type='[ "Digital Creative.", "Copywriter.", "Content Creator.", "Lord of the Rings fan." ]'>
+                <span class="wrap"></span>
+            </a>
+        </h4>
+
+        <!-- <h4 class="text-center text-capitalize">Digital Creative, Copywriter & Content Creator</h4> -->
+            <ul class="text-center list-inline" style="margin-left: 5px;">
+                <li>
+                  <a href="https://www.facebook.com/chris.doran.16" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/chris-doran-971976a2/" target="_blank">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/doranchri/?hl=en" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+            </ul>
+        <div id ="buttons" class="row">
+            <!-- Download & Contact Button -->
+            <div class="col col-xs-12 col-sm-12 col-md-12 text-center">              
+                <a href="cv/CV.pdf" download="cv-file.docx" class="button2">Download CV</a>
+                <a type="button" class="button2" data-toggle="modal" data-target="#myModal"> &nbsp; Contact Me &nbsp;</a>
+            </div>
+        </div>
+
+
+
+        <div id="iconList" class="container">                   
+
+        </div>
+        
+        <div id="test" class="text-center">                   
+           <h2>Portfolio</h2>
+           <i class="fas fa-long-arrow-alt-down fa-lg"></i>          
+        </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="">
+      <!-- <h1 class="text-center text-capitalize">Portfolio </h1> -->
+      <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3 masonry">
+        <li class="masonry-item grid">
+          <figure class="effect-sarah"> <img src="images/adshell1.jpg" alt="" />
+            <figcaption>
+              <h2>Smokefree <span>NZ</span></h2>
+              <p>National Adshell & billboard anti-smoking campaign</p>
+              <a href="detailsSBYSOOF.html">View more</a> </figcaption>
+          </figure>
+        </li>
+        <li class="masonry-item grid">
+          <figure class="effect-sarah"> <img src="images/SamBrandMockup.jpg" alt="" />
+            <figcaption>
+              <h2>Politician <span>Sam</span></h2>
+              <!-- <h3>Branding, Marketing & Creative Direction</h3> -->
+              <p>New Zealand's first virtual politician</p>
+              <a href="detailsSam.html">View more</a> </figcaption>
+          </figure>
+        </li>
+        <!-- <li class="masonry-item grid">
+
+          <figure class="effect-sarah"> 
+            <img src="images/adshell4.jpg" alt="" />
+              <figcaption>
+                <h2>Photo <span>Title</span></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="details.html">View more</a> 
+              </figcaption>
+          </figure>
+        </li> -->
+        <li class="masonry-item grid">
+          <figure class="effect-sarah"> <img src="images/HowToSave.jpg" alt="" />
+            <figcaption>
+              <h2>Smokefree <span>NZ</span></h2>
+              <p class="description">National digital campaign</p>
+              <a href="detailsSBYSDigital.html">View more</a> </figcaption>
+          </figure>
+          
+        </li>
+        <li class="masonry-item grid">
+          <figure class="effect-sarah"> 
+            <img src="images/nowYourInTheGame.jpg" alt="" />
+            <figcaption>
+              <h2>TAB <span>NZ</span></h2>
+              <p class="description">National Digital & Outdoor campaign</p>
+              <a href="detailsTAB.html">View more</a> </figcaption>
+          </figure>
+        </li>
+        <li class="masonry-item grid">
+          <figure class="effect-sarah"> <img src="images/westfield.jpg" alt="" />
+            <figcaption>
+              <h2>TAB <span>NZ</span></h2>
+              <p class="description">National Digital & Outdoor campaign</p>
+              <a href="detailsWestfield.html">View more</a> </figcaption>
+          </figure>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</main>
+
+<!-- Image Gallery --> 
+
+<!-- footer -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+
+                    </button>
+                     <h4 class="modal-title text-center" id="myModalLabel">Contact Me</h4>
+
+                </div>
+                <div class="modal-body">
+                <!-- Contact Info -->                          
+                    <div class="info card">
+                        <!-- Apply your own info here -->
+                        <ul class="text-center" style="padding-left: 0px">
+                            <li>
+                                <i class="fas fa-phone center-block"></i>
+                                <p>+64 - 27 -873 - 3497</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <p>Chris.Thomas.Doran@gmail.com</p>
+                            </li>
+                        </ul>                                                   
+                  </div>
+                </div>
+                <div class="modal-footer">                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer --> 
+
+<!-- jQuery --> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script> 
+<script>window.jQuery || document.write('<script src="js/assets/jquery.min.js"><\/script>')</script> 
+<script src="js/assets/plugins.js" type="text/javascript"></script> 
+<script src="js/assets/bootstrap.min.js" type="text/javascript"></script> 
+<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>  -->
+<!-- <script src="js/maps.js" type="text/javascript"></script>  -->
+<script src="js/custom.js" type="text/javascript"></script> 
+<script src="js/jquery.contact.js" type="text/javascript"></script> 
+<script src="js/main.js" type="text/javascript"></script> 
+<script src="js/gallery/masonry.pkgd.min.js" type="text/javascript"></script> 
+<script src="js/gallery/imagesloaded.pkgd.min.js" type="text/javascript"></script> 
+<script src="js/gallery/jquery.infinitescroll.min.js" type="text/javascript"></script> 
+<script src="js/gallery/main.js" type="text/javascript"></script> 
+<script src="js/jquery.nicescroll.min.js" type="text/javascript"></script>
+</body>
+</html>
